@@ -1,0 +1,724 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bama Cheer Xtreme — All-Star Cheer, Tuscaloosa/Northport, AL</title>
+<meta name="description" content="Bama Cheer Xtreme is an All-Star competitive cheer gym in the Northport/Tuscaloosa, Alabama area, led by AnQuetta Diggins Shealey. Programs for tiny athletes through elite competitors." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Mono:wght@400;700&family=Work+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0b0b0c;
+    --ink-2:#161617;
+    --bone:#ffffff;
+    --bone-2:#efefef;
+    --paper:#faf9f7;
+    --gold:#e2142a;
+    --gold-dim:#a80f1f;
+    --coral:#0b0b0c;
+    --coral-dim:#8a0d1a;
+    --line: rgba(250,248,242,0.14);
+    --line-dark: rgba(11,11,12,0.14);
+    --max: 1280px;
+    --disp: 'Anton', 'Arial Narrow', sans-serif;
+    --body: 'Work Sans', system-ui, sans-serif;
+    --mono: 'Space Mono', monospace;
+  }
+  .ph{ position:relative; overflow:hidden; background:var(--ink-2); }
+  .ph img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .ph::after{ content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(11,11,12,0) 40%, rgba(11,11,12,0.55)); pointer-events:none; }
+  .ph .cap{ position:absolute; left:0; right:0; bottom:0; z-index:2; padding:14px 16px; font-family:var(--mono); font-size:10.5px; letter-spacing:0.08em; text-transform:uppercase; color:var(--paper); opacity:0.85; }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--ink);
+    color:var(--paper);
+    font-family:var(--body);
+    font-size:16px;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img{max-width:100%; display:block;}
+  a{color:inherit; text-decoration:none;}
+  ul{list-style:none;}
+  button{font-family:inherit; cursor:pointer;}
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 32px;}
+  @media(max-width:720px){ .wrap{padding:0 20px;} }
+
+  h1,h2,h3,h4{font-family:var(--disp); font-weight:400; text-transform:uppercase; letter-spacing:0.01em; line-height:0.92;}
+  .eyebrow{
+    font-family:var(--mono); font-size:12.5px; letter-spacing:0.18em; text-transform:uppercase;
+    display:inline-flex; align-items:center; gap:10px; opacity:0.85;
+  }
+  .eyebrow::before{content:""; width:22px; height:2px; background:currentColor; display:inline-block;}
+
+  :focus-visible{ outline:3px solid var(--gold); outline-offset:3px; }
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important;}
+  }
+
+  /* ===== signature bolt divider ===== */
+  .bolt-divider{ width:100%; height:34px; display:block; }
+  .bolt-divider svg{ width:100%; height:100%; display:block; }
+  .flip{ transform:scaleY(-1); }
+
+  /* ===== reveal on scroll ===== */
+  .reveal{ opacity:0; transform:translateY(28px); transition:opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1); }
+  .reveal.in{ opacity:1; transform:none; }
+
+  /* ===================== NAV ===================== */
+  header.site{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:18px 32px;
+    background:linear-gradient(180deg, rgba(19,20,27,0.92), rgba(19,20,27,0));
+    transition:background .3s ease, padding .3s ease;
+  }
+  header.site.solid{ background:var(--ink); box-shadow:0 1px 0 var(--line); padding-top:14px; padding-bottom:14px; }
+  .logo{ display:flex; align-items:center; gap:10px; }
+  .logo-mark{ height:52px; width:52px; border-radius:50%; object-fit:cover; box-shadow:0 0 0 2px var(--gold); }
+  nav.main{ display:flex; align-items:center; gap:30px; }
+  nav.main a{ font-family:var(--mono); font-size:12.5px; letter-spacing:0.1em; text-transform:uppercase; opacity:0.85; position:relative; padding:4px 0; }
+  nav.main a:hover{ opacity:1; color:var(--gold); }
+  .nav-cta{
+    font-family:var(--mono); font-size:12px; letter-spacing:0.08em; text-transform:uppercase;
+    background:var(--coral); color:var(--paper); padding:11px 18px; border:none;
+    box-shadow:3px 3px 0 var(--gold);
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .nav-cta:hover{ transform:translate(-2px,-2px); box-shadow:5px 5px 0 var(--gold); }
+  .nav-toggle{ display:none; background:none; border:none; color:var(--paper); }
+  @media(max-width:900px){
+    nav.main{ display:none; }
+    .nav-toggle{ display:block; }
+  }
+  .mobile-menu{
+    position:fixed; inset:0; z-index:200; background:var(--ink); display:flex; flex-direction:column;
+    padding:26px 24px; transform:translateY(-100%); transition:transform .35s cubic-bezier(.2,.7,.2,1);
+  }
+  .mobile-menu.open{ transform:translateY(0); }
+  .mobile-menu .top{ display:flex; justify-content:space-between; align-items:center; margin-bottom:40px; }
+  .mobile-menu a{ font-family:var(--disp); font-size:38px; text-transform:uppercase; padding:14px 0; border-bottom:1px solid var(--line); }
+  .mobile-menu .close{ background:none; border:none; color:var(--paper); font-size:30px; }
+  .mobile-menu .call{ margin-top:auto; font-family:var(--mono); font-size:14px; color:var(--gold); }
+
+  /* ===================== HERO ===================== */
+  .hero{
+    position:relative; min-height:100svh; display:flex; align-items:flex-end;
+    padding:150px 0 0;
+    overflow:hidden;
+  }
+  .hero-bg{ position:absolute; inset:0; z-index:0; }
+  .hero-bg img{ width:100%; height:100%; object-fit:cover; object-position:center 25%; filter:grayscale(0.15) contrast(1.05); }
+  .hero-bg::after{
+    content:""; position:absolute; inset:0;
+    background:
+      radial-gradient(ellipse 900px 500px at 82% 0%, rgba(226,20,42,0.35), transparent 60%),
+      radial-gradient(ellipse 900px 700px at 10% 110%, rgba(120,8,18,0.55), transparent 60%),
+      linear-gradient(180deg, rgba(11,11,12,0.55) 0%, rgba(11,11,12,0.55) 40%, rgba(11,11,12,0.94) 100%);
+  }
+  .hero .storm-lines{ position:absolute; inset:0; z-index:1; opacity:0.6; pointer-events:none; }
+  .hero-grid{
+    position:relative; z-index:2; width:100%;
+    display:grid; grid-template-columns:1.5fr 1fr; gap:40px; align-items:end;
+    padding-bottom:64px;
+  }
+  .hero-eyebrow-row{ grid-column:1/-1; display:flex; justify-content:space-between; align-items:center; margin-bottom:18px; }
+  .hero h1{
+    font-size:clamp(56px, 10vw, 148px);
+    letter-spacing:-0.01em;
+  }
+  .hero h1 .line{ display:block; }
+  .hero h1 .accent{ color:var(--gold); }
+  .hero-sub{
+    grid-column:1; max-width:560px; padding-top:22px;
+    font-size:18px; line-height:1.6; opacity:0.92;
+  }
+  .hero-side{
+    grid-column:2; display:flex; flex-direction:column; gap:18px; align-items:flex-start;
+    border-left:1px solid var(--line); padding-left:28px;
+  }
+  .hero-side .stat{ font-family:var(--mono); font-size:12.5px; letter-spacing:0.06em; opacity:0.85; }
+  .hero-side .stat b{ display:block; font-family:var(--disp); font-size:30px; color:var(--gold); letter-spacing:0; }
+  .hero-ctas{ display:flex; gap:14px; flex-wrap:wrap; margin-top:30px; grid-column:1/-1; }
+  .btn{
+    font-family:var(--mono); font-size:13px; letter-spacing:0.08em; text-transform:uppercase;
+    padding:16px 26px; display:inline-flex; align-items:center; gap:10px; border:1px solid transparent;
+    transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+  }
+  .btn-primary{ background:var(--coral); color:var(--paper); box-shadow:4px 4px 0 var(--gold); }
+  .btn-primary:hover{ transform:translate(-2px,-2px); box-shadow:6px 6px 0 var(--gold); }
+  .btn-ghost{ border-color:var(--line); color:var(--paper); }
+  .btn-ghost:hover{ border-color:var(--gold); color:var(--gold); }
+  @media(max-width:900px){
+    .hero{ padding-top:120px; }
+    .hero-grid{ grid-template-columns:1fr; }
+    .hero-sub, .hero-side{ grid-column:1; }
+    .hero-side{ border-left:none; padding-left:0; border-top:1px solid var(--line); padding-top:18px; flex-direction:row; flex-wrap:wrap; gap:28px; }
+  }
+
+  /* ===================== MARQUEE ===================== */
+  .marquee{ background:var(--gold); color:var(--ink); overflow:hidden; border-top:1px solid var(--ink); border-bottom:1px solid var(--ink); }
+  .marquee-track{ display:flex; width:max-content; animation:scroll-left 32s linear infinite; }
+  .marquee span{ font-family:var(--disp); font-size:20px; padding:14px 30px; white-space:nowrap; letter-spacing:0.02em; }
+  .marquee span::after{ content:"✷"; margin-left:30px; opacity:0.6; }
+  @keyframes scroll-left{ from{transform:translateX(0);} to{transform:translateX(-50%);} }
+
+  /* ===================== INTRO / STATEMENT ===================== */
+  .statement{ padding:120px 0; background:var(--ink); }
+  .statement .wrap{ display:grid; grid-template-columns:0.7fr 1.3fr; gap:60px; }
+  .statement .label-col{ }
+  .statement blockquote{
+    font-family:var(--disp); font-size:clamp(28px,4vw,48px); line-height:1.12; text-transform:none; letter-spacing:0;
+  }
+  .statement blockquote em{ font-style:normal; color:var(--gold); }
+  .statement footer{ margin-top:28px; font-family:var(--mono); font-size:13px; opacity:0.75; }
+  @media(max-width:800px){ .statement .wrap{ grid-template-columns:1fr; gap:24px; } }
+
+  /* ===================== SECTION HEADERS ===================== */
+  .section{ padding:110px 0; position:relative; }
+  .section.on-bone{ background:var(--bone); color:var(--ink); }
+  .section.on-ink{ background:var(--ink); color:var(--paper); }
+  .section-head{ display:flex; justify-content:space-between; align-items:flex-end; gap:30px; margin-bottom:56px; flex-wrap:wrap; }
+  .section-head h2{ font-size:clamp(38px,6vw,84px); }
+  .section-head p{ max-width:360px; font-size:15px; opacity:0.8; padding-bottom:10px; }
+  .on-bone .eyebrow{ color:var(--coral-dim); }
+  .on-ink .eyebrow{ color:var(--gold); }
+
+  /* ===================== PROGRAMS — horizontal roster strip ===================== */
+  .roster{
+    display:flex; gap:0; overflow-x:auto; scroll-snap-type:x mandatory; padding-bottom:20px;
+    margin:0 -32px; padding-left:32px; padding-right:32px;
+    -webkit-overflow-scrolling:touch;
+  }
+  .roster::-webkit-scrollbar{ height:6px; }
+  .roster::-webkit-scrollbar-thumb{ background:var(--gold); }
+  .program-card{
+    flex:0 0 320px; scroll-snap-align:start; border-right:1px solid var(--line-dark);
+    padding:0 34px 0 0; margin-right:34px;
+  }
+  .program-card .ph{ aspect-ratio:4/3; margin-bottom:18px; }
+  .program-card .num{ font-family:var(--mono); font-size:13px; color:var(--coral-dim); }
+  .program-card h3{ font-size:34px; margin:16px 0 10px; text-transform:uppercase; }
+  .program-card .age{ font-family:var(--mono); font-size:12px; text-transform:uppercase; letter-spacing:0.08em; background:var(--ink); color:var(--paper); padding:5px 10px; display:inline-block; margin-bottom:16px; }
+  .program-card p{ font-size:15px; opacity:0.85; margin-bottom:16px; }
+  .program-card .tags{ display:flex; flex-wrap:wrap; gap:8px; }
+  .program-card .tags span{ font-family:var(--mono); font-size:11px; text-transform:uppercase; letter-spacing:0.05em; border:1px solid var(--line-dark); padding:4px 8px; opacity:0.75; }
+  .roster-hint{ font-family:var(--mono); font-size:12px; letter-spacing:0.08em; text-transform:uppercase; opacity:0.6; margin-top:14px; display:flex; align-items:center; gap:8px; }
+
+  /* ===== full-bleed break ===== */
+  .break-photo{ position:relative; height:56vh; min-height:380px; overflow:hidden; }
+  .break-photo img{ width:100%; height:100%; object-fit:cover; object-position:center 30%; }
+  .break-photo::after{ content:""; position:absolute; inset:0; background:linear-gradient(0deg, rgba(11,11,12,0.85), rgba(11,11,12,0.15) 45%, rgba(11,11,12,0.5)); }
+  .break-photo .wrap{ position:absolute; inset:0; display:flex; align-items:flex-end; padding-bottom:48px; }
+  .break-photo h3{ font-size:clamp(30px,6vw,60px); color:var(--paper); max-width:760px; }
+  .break-photo h3 span{ color:var(--gold); }
+
+  /* ===================== TEAM / THUNDER ===================== */
+  .thunder{ position:relative; background:var(--ink); color:var(--paper); padding:130px 0; overflow:hidden; }
+  .thunder .wrap{ position:relative; z-index:2; display:grid; grid-template-columns:1fr 1fr; gap:50px; align-items:center; }
+  .thunder h2{ font-size:clamp(46px,9vw,120px); }
+  .thunder h2 span{ color:var(--gold); }
+  .thunder p{ font-size:17px; opacity:0.88; max-width:480px; margin-top:20px; }
+  .thunder-photo{ aspect-ratio:4/5; border:2px solid var(--gold); }
+  .thunder-list{ margin-top:34px; display:flex; flex-direction:column; gap:0; }
+  .thunder-list li{ display:flex; gap:16px; padding:16px 0; border-top:1px solid var(--line); align-items:baseline; }
+  .thunder-list li:last-child{ border-bottom:1px solid var(--line); }
+  .thunder-list .k{ font-family:var(--mono); font-size:12px; color:var(--gold); letter-spacing:0.08em; text-transform:uppercase; width:120px; flex:none; }
+  .thunder-list .v{ font-size:15px; opacity:0.9; }
+  @media(max-width:900px){ .thunder .wrap{ grid-template-columns:1fr; } .thunder-photo{ order:-1; } }
+
+  /* ===================== COACH ANQUETTA ===================== */
+  .coach{ background:var(--bone); color:var(--ink); padding:120px 0; }
+  .coach .wrap{ display:grid; grid-template-columns:0.9fr 1.1fr; gap:60px; align-items:start; }
+  .coach-photo{
+    aspect-ratio:3/4; background:var(--ink);
+    display:flex; align-items:center; justify-content:center; text-align:center; padding:30px;
+    position:relative; overflow:hidden;
+  }
+  .coach-photo::before{
+    content:"AS"; position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+    font-family:var(--disp); font-size:min(38vw,220px); color:transparent; -webkit-text-stroke:2px rgba(226,20,42,0.5);
+  }
+  .coach-photo span{ position:relative; z-index:2; font-family:var(--mono); font-size:12px; letter-spacing:0.08em; text-transform:uppercase; opacity:0.75; color:var(--paper); }
+  .coach-photo .frame-tag{ position:absolute; bottom:-1px; left:-1px; z-index:2; background:var(--gold); color:var(--paper); font-family:var(--mono); font-size:11px; padding:6px 12px; letter-spacing:0.06em; text-transform:uppercase; }
+  .coach-text h2{ font-size:clamp(36px,6vw,64px); margin-bottom:22px; }
+  .coach-text p{ font-size:16.5px; margin-bottom:18px; max-width:560px; }
+  .coach-text p.lead{ font-size:19px; font-weight:500; }
+  .coach-sig{ margin-top:30px; font-family:var(--disp); font-size:28px; color:var(--coral-dim); }
+  .coach-sig small{ display:block; font-family:var(--mono); font-size:11px; color:var(--ink); opacity:0.6; letter-spacing:0.06em; text-transform:uppercase; margin-top:6px; }
+  @media(max-width:900px){ .coach .wrap{ grid-template-columns:1fr; } }
+
+  /* ===================== CULTURE GRID ===================== */
+  .culture{ background:var(--ink); padding:110px 0; }
+  .culture-grid{ display:grid; grid-template-columns:repeat(6,1fr); grid-auto-rows:150px; gap:10px; margin-top:20px; }
+  .cell{ display:flex; align-items:center; justify-content:center; text-align:center; padding:14px; }
+  .cell span{ font-family:var(--mono); font-size:11px; letter-spacing:0.06em; text-transform:uppercase; opacity:0.55; }
+  .cell.ph{ align-items:flex-end; justify-content:flex-start; }
+  .cell.a{ grid-column:span 3; grid-row:span 2; background:linear-gradient(135deg, rgba(226,20,42,0.14), transparent); }
+  .cell.b{ grid-column:span 2; grid-row:span 1; }
+  .cell.c{ grid-column:span 1; grid-row:span 1; background:var(--gold); border-style:solid; border-color:var(--gold); }
+  .cell.c span{ opacity:1; color:var(--paper); font-weight:700; font-family:var(--disp); font-size:15px; text-transform:uppercase; letter-spacing:0.03em; }
+  .cell.d{ grid-column:span 2; grid-row:span 2; }
+  .cell.e{ grid-column:span 2; grid-row:span 1; background:linear-gradient(135deg, rgba(120,8,18,0.22), transparent); }
+  .cell.f{ grid-column:span 2; grid-row:span 1; }
+  @media(max-width:800px){
+    .culture-grid{ grid-template-columns:repeat(2,1fr); grid-auto-rows:130px; }
+    .cell.a,.cell.d{ grid-column:span 2; grid-row:span 1; }
+  }
+
+  /* ===================== QUOTE STRIP ===================== */
+  .quotes{ background:var(--bone); color:var(--ink); padding:100px 0; }
+  .quote-row{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line-dark); border:1px solid var(--line-dark); margin-top:40px; }
+  .quote-card{ background:var(--bone); padding:34px 28px; }
+  .quote-card p{ font-size:17px; line-height:1.55; margin-bottom:18px; }
+  .quote-card cite{ font-family:var(--mono); font-size:12px; letter-spacing:0.06em; text-transform:uppercase; opacity:0.65; font-style:normal; }
+  @media(max-width:800px){ .quote-row{ grid-template-columns:1fr; } }
+
+  /* ===================== JOIN / EVAL ===================== */
+  .join{ background:var(--coral); color:var(--paper); padding:130px 0; position:relative; overflow:hidden; }
+  .join .eyebrow{ color:var(--gold); }
+  .join .wrap{ position:relative; z-index:2; display:grid; grid-template-columns:1fr 1fr; gap:60px; }
+  .join h2{ font-size:clamp(42px,7vw,92px); }
+  .join p.lead{ font-size:18px; max-width:460px; margin-top:20px; opacity:0.95; }
+  .join-steps{ margin-top:34px; display:flex; flex-direction:column; gap:14px; }
+  .join-steps li{ display:flex; gap:14px; align-items:baseline; font-size:15.5px; }
+  .join-steps .n{ font-family:var(--disp); font-size:22px; color:var(--gold); }
+  form.eval{ background:var(--paper); color:var(--ink); padding:36px; display:flex; flex-direction:column; gap:16px; box-shadow:8px 8px 0 var(--gold); }
+  form.eval .row{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+  form.eval label{ display:flex; flex-direction:column; gap:6px; font-family:var(--mono); font-size:11px; letter-spacing:0.06em; text-transform:uppercase; }
+  form.eval input, form.eval select, form.eval textarea{
+    font-family:var(--body); font-size:15px; padding:12px 12px; border:1px solid var(--line-dark); background:var(--bone);
+  }
+  form.eval textarea{ resize:vertical; min-height:80px; }
+  form.eval button{
+    margin-top:6px; background:var(--ink); color:var(--paper); font-family:var(--mono); font-size:13px; letter-spacing:0.08em;
+    text-transform:uppercase; padding:16px; border:none;
+  }
+  form.eval button:hover{ background:var(--coral-dim); }
+  form.eval .fine{ font-size:12px; opacity:0.65; }
+  @media(max-width:900px){ .join .wrap{ grid-template-columns:1fr; } form.eval .row{ grid-template-columns:1fr; } }
+
+  /* ===================== FAQ ===================== */
+  .faq{ background:var(--ink); padding:110px 0; }
+  .faq-list{ margin-top:40px; border-top:1px solid var(--line); }
+  .faq-item{ border-bottom:1px solid var(--line); }
+  .faq-item button{
+    width:100%; background:none; border:none; color:var(--paper); text-align:left;
+    display:flex; justify-content:space-between; align-items:center; gap:20px; padding:26px 0;
+    font-family:var(--disp); font-size:22px; text-transform:none; letter-spacing:0;
+  }
+  .faq-item .plus{ font-family:var(--mono); font-size:22px; color:var(--gold); transition:transform .25s ease; flex:none; }
+  .faq-item[aria-expanded="true"] .plus{ transform:rotate(45deg); }
+  .faq-panel{ max-height:0; overflow:hidden; transition:max-height .35s ease; }
+  .faq-panel p{ padding:0 0 26px; max-width:640px; opacity:0.82; font-size:15.5px; }
+
+  /* ===================== FOOTER ===================== */
+  footer.site{ background:var(--ink-2); padding:80px 0 30px; border-top:1px solid var(--line); }
+  .footer-grid{ display:grid; grid-template-columns:1.3fr 1fr 1fr 1fr; gap:40px; }
+  .footer-brand .logo{ margin-bottom:16px; }
+  .footer-brand p{ font-size:14px; opacity:0.7; max-width:280px; }
+  .footer-col h4{ font-family:var(--mono); font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:var(--gold); margin-bottom:16px; font-weight:700; }
+  .footer-col a, .footer-col p{ display:block; font-size:14.5px; opacity:0.82; margin-bottom:10px; }
+  .footer-col a:hover{ color:var(--gold); opacity:1; }
+  .footer-bottom{ margin-top:60px; padding-top:24px; border-top:1px solid var(--line); display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; font-family:var(--mono); font-size:11.5px; opacity:0.55; letter-spacing:0.04em; }
+  @media(max-width:800px){ .footer-grid{ grid-template-columns:1fr 1fr; } }
+</style>
+</head>
+<body>
+
+<!-- ===================== NAV ===================== -->
+<header class="site" id="siteHeader">
+  <a href="#top" class="logo">
+    <img src="bcx-logo.png" alt="Bama Cheer Xtreme logo" class="logo-mark"/>
+  </a>
+  <nav class="main">
+    <a href="#programs">Programs</a>
+    <a href="#thunder">Teams</a>
+    <a href="#coach">Coach AnQuetta</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Contact</a>
+    <a href="#join" class="nav-cta">Book an Evaluation</a>
+  </nav>
+  <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+    <svg width="26" height="20" viewBox="0 0 26 20" fill="none"><path d="M0 1H26M0 10H26M0 19H26" stroke="currentColor" stroke-width="2"/></svg>
+  </button>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <div class="top">
+    <a href="#top" class="logo">
+      <img src="bcx-logo.png" alt="Bama Cheer Xtreme logo" class="logo-mark"/>
+    </a>
+    <button class="close" id="navClose" aria-label="Close menu">×</button>
+  </div>
+  <a href="#programs">Programs</a>
+  <a href="#thunder">Teams</a>
+  <a href="#coach">Coach AnQuetta</a>
+  <a href="#faq">FAQ</a>
+  <a href="#contact">Contact</a>
+  <a href="#join">Book an Evaluation</a>
+  <div class="call">Call: (205) 555-0142</div>
+</div>
+
+<!-- ===================== HERO ===================== -->
+<main id="top">
+<section class="hero">
+  <div class="hero-bg">
+    <img src="https://images.unsplash.com/photo-1639510836817-3261b19c69eb?w=1920&q=80&auto=format&fit=crop" alt="Cheer athlete mid-jump in red and white uniform" />
+  </div>
+  <svg class="storm-lines" viewBox="0 0 1400 800" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M-50 120 L1450 40" stroke="#ffffff" stroke-opacity="0.1" stroke-width="1.5"/>
+    <path d="M-50 260 L1450 180" stroke="#e2142a" stroke-opacity="0.18" stroke-width="1.5"/>
+    <path d="M-50 700 L1450 620" stroke="#ffffff" stroke-opacity="0.07" stroke-width="1.5"/>
+  </svg>
+  <div class="wrap hero-grid">
+    <div class="hero-eyebrow-row">
+      <span class="eyebrow">All-Star Cheer · Northport / Tuscaloosa, AL</span>
+      <span class="eyebrow" style="opacity:.6">Est. by AnQuetta Diggins Shealey</span>
+    </div>
+    <h1>
+      <span class="line">RAISED ON</span>
+      <span class="line accent">THUNDER.</span>
+    </h1>
+    <p class="hero-sub">Bama Cheer Xtreme is where West Alabama athletes learn to tumble, stunt, and compete — and where a lot of them learn to believe in themselves for the first time. Real coaching, real technique, real community.</p>
+    <div class="hero-side">
+      <div class="stat"><b>Tiny&nbsp;→&nbsp;Elite</b>Programs for every age &amp; level</div>
+      <div class="stat"><b>Family-Run</b>Owned &amp; coached by AnQuetta Shealey</div>
+    </div>
+    <div class="hero-ctas">
+      <a href="#programs" class="btn btn-primary">Explore Programs →</a>
+      <a href="#join" class="btn btn-ghost">Book an Evaluation</a>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>TUMBLING</span><span>STUNTING</span><span>ALL-STAR TEAMS</span><span>PRIVATE COACHING</span><span>TINY TO ELITE</span><span>NORTHPORT · TUSCALOOSA</span>
+    <span>TUMBLING</span><span>STUNTING</span><span>ALL-STAR TEAMS</span><span>PRIVATE COACHING</span><span>TINY TO ELITE</span><span>NORTHPORT · TUSCALOOSA</span>
+  </div>
+</div>
+
+<!-- ===================== STATEMENT ===================== -->
+<section class="statement reveal">
+  <div class="wrap">
+    <div class="label-col"><span class="eyebrow">The BCX Way</span></div>
+    <div>
+      <blockquote>We didn't build a gym to make champions first. We built it to make <em>kids who believe they can be</em> — the mat, the mirror, the mount, and every rep after that, that's how the confidence actually gets built.</blockquote>
+      <footer>— The philosophy behind every class, at every level, at Bama Cheer Xtreme</footer>
+    </div>
+  </div>
+</section>
+
+<div class="bolt-divider" aria-hidden="true">
+  <svg viewBox="0 0 1200 34" preserveAspectRatio="none"><polyline points="0,10 150,10 200,26 260,4 330,28 400,8 480,24 560,6 650,22 740,10 830,26 920,8 1010,20 1100,10 1200,10" fill="none" stroke="#e2142a" stroke-width="2"/></svg>
+</div>
+
+<!-- ===================== PROGRAMS ===================== -->
+<section class="section on-bone" id="programs">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <span class="eyebrow">Programs</span>
+        <h2>Find your<br/>lane.</h2>
+      </div>
+      <p>From a first cartwheel to a full competition season, athletes move through a clear path — not a rack of add-on classes.</p>
+    </div>
+
+    <div class="roster reveal">
+      <div class="program-card">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1650153067935-f5fe6dc369ed?w=700&q=80&auto=format&fit=crop" alt="Young cheer athlete raising arms in uniform" loading="lazy"/></div>
+        <div class="num">01</div>
+        <h3>Tiny &amp; Mini</h3>
+        <span class="age">Ages 3–6</span>
+        <p>Coordination, listening skills, and the very first building blocks of tumbling and cheer — taught like play, built like a foundation.</p>
+        <div class="tags"><span>Motor Skills</span><span>Intro Tumbling</span><span>Team Prep</span></div>
+      </div>
+      <div class="program-card">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1705592341761-fdca5d1b7f2e?w=700&q=80&auto=format&fit=crop" alt="Group of youth cheerleaders standing together" loading="lazy"/></div>
+        <div class="num">02</div>
+        <h3>Youth &amp; Junior</h3>
+        <span class="age">Ages 6–12</span>
+        <p>Standing and running tumbling, stunt fundamentals, and an athlete's first taste of routine choreography and real practice discipline.</p>
+        <div class="tags"><span>Levels 1–3</span><span>Stunting</span><span>Choreography</span></div>
+      </div>
+      <div class="program-card">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1734495394772-88be596b825a?w=700&q=80&auto=format&fit=crop" alt="Cheerleaders competing on the court" loading="lazy"/></div>
+        <div class="num">03</div>
+        <h3>Senior &amp; Elite</h3>
+        <span class="age">Ages 12–18</span>
+        <p>Competition-level tumbling, advanced stunt sequences, and full-team routine work for athletes training toward regional and national events.</p>
+        <div class="tags"><span>Levels 3–6</span><span>Competition Prep</span><span>College Track</span></div>
+      </div>
+      <div class="program-card">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1579488026639-1cad40ff2d47?w=700&q=80&auto=format&fit=crop" alt="Athlete training with arms raised in the gym" loading="lazy"/></div>
+        <div class="num">04</div>
+        <h3>Tumbling &amp; Skills</h3>
+        <span class="age">All ages</span>
+        <p>Standalone tumbling classes for athletes who want extra reps outside team practice — from first back walkover to standing tucks.</p>
+        <div class="tags"><span>Drop-In</span><span>Skill Clinics</span><span>Progressions</span></div>
+      </div>
+      <div class="program-card">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1639510478219-459967c2be92?w=700&q=80&auto=format&fit=crop" alt="Cheer athlete posing in uniform" loading="lazy"/></div>
+        <div class="num">05</div>
+        <h3>Private Coaching</h3>
+        <span class="age">By appointment</span>
+        <p>One-on-one and small-group sessions for athletes chasing a specific skill, prepping for evaluations, or working with a college recruiter's checklist.</p>
+        <div class="tags"><span>1:1 Sessions</span><span>Goal-Based</span></div>
+      </div>
+    </div>
+    <div class="roster-hint">⟷ scroll to see every program</div>
+  </div>
+</section>
+
+<section class="break-photo reveal">
+  <img src="https://images.unsplash.com/photo-1589748263853-21d0bd847017?w=1920&q=80&auto=format&fit=crop" alt="Cheer athletes jumping mid-routine" />
+  <div class="wrap"><h3>Every level trains the <span>same standard.</span></h3></div>
+</section>
+
+<div class="bolt-divider flip" aria-hidden="true">
+  <svg viewBox="0 0 1200 34" preserveAspectRatio="none"><polyline points="0,10 150,10 200,26 260,4 330,28 400,8 480,24 560,6 650,22 740,10 830,26 920,8 1010,20 1100,10 1200,10" fill="none" stroke="#8a0d1a" stroke-width="2"/></svg>
+</div>
+
+<!-- ===================== TEAMS / THUNDER ===================== -->
+<section class="thunder" id="thunder">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Competitive Teams</span>
+      <h2>We compete<br/>as <span>Thunder.</span></h2>
+      <p>Every BCX athlete who makes a team wears the Thunder name onto the floor. It's earned at evaluations, built in practice, and proven on the score sheet — a full competitive season of choreography, conditioning, and travel to regional and national events.</p>
+      <ul class="thunder-list">
+        <li><span class="k">Season</span><span class="v">Placements run through evaluations each year, with teams formed by age and skill level.</span></li>
+        <li><span class="k">Practice</span><span class="v">Structured weekly practice blocks focused on stunt technique, tumbling progressions, and full-routine run-throughs.</span></li>
+        <li><span class="k">Competing</span><span class="v">Teams travel to regional competitions throughout the season, working toward national-level events.</span></li>
+        <li><span class="k">Culture</span><span class="v">Parents describe it as a second family — practices, competitions, and everything in between.</span></li>
+      </ul>
+    </div>
+    <div class="thunder-photo ph reveal">
+      <img src="https://images.unsplash.com/photo-1681851381987-9962be87558c?w=900&q=80&auto=format&fit=crop" alt="Cheer team building a stunt together" loading="lazy"/>
+      <span class="cap">Team photo — swap in Thunder competition footage</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== COACH ANQUETTA ===================== -->
+<section class="coach" id="coach">
+  <div class="wrap">
+    <div class="coach-photo reveal">
+      <span>Portrait —<br/>AnQuetta Diggins Shealey<br/>Owner &amp; Head Coach</span>
+      <div class="frame-tag">Owner · Head Coach</div>
+    </div>
+    <div class="coach-text reveal">
+      <span class="eyebrow">Meet the Coach</span>
+      <h2>AnQuetta Diggins Shealey</h2>
+      <p class="lead">A University of Alabama graduate who built a gym in her own backyard of West Alabama — and has been running it ever since.</p>
+      <p>AnQuetta didn't set out to start a business first. She set out to give kids in Northport and Tuscaloosa a place to learn cheer the right way — technique first, confidence built in right alongside it. That's still the standard every coach on staff is held to at Bama Cheer Xtreme today.</p>
+      <p>Ask any parent what makes the gym different and technique rarely comes up first. They talk about how their kid is treated — pushed hard, looked after harder, and known by name from their very first tiny class.</p>
+      <div class="coach-sig">A. Shealey<small>Owner &amp; Head Coach, Bama Cheer Xtreme</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CULTURE GRID ===================== -->
+<section class="culture">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <span class="eyebrow">Life at BCX</span>
+        <h2 style="color:var(--paper)">The gym,<br/>up close.</h2>
+      </div>
+      <p style="color:var(--paper)">A working photo wall — drop in real practice, competition, and behind-the-scenes shots from the season.</p>
+    </div>
+    <div class="culture-grid reveal">
+      <div class="cell a ph"><img src="https://images.unsplash.com/photo-1639510836817-3261b19c69eb?w=900&q=80&auto=format&fit=crop" alt="Athlete mid-jump on the competition floor" loading="lazy"/><span class="cap">Competition floor — photo</span></div>
+      <div class="cell b ph"><img src="https://images.unsplash.com/photo-1589748263853-21d0bd847017?w=700&q=80&auto=format&fit=crop" alt="Athletes practicing a stunt" loading="lazy"/><span class="cap">Stunt practice — photo</span></div>
+      <div class="cell c"><span>Thunder</span></div>
+      <div class="cell d ph"><img src="https://images.unsplash.com/photo-1681851381987-9962be87558c?w=900&q=80&auto=format&fit=crop" alt="Team building a tumbling line" loading="lazy"/><span class="cap">Tumbling line — photo</span></div>
+      <div class="cell e ph"><img src="https://images.unsplash.com/photo-1705592341761-fdca5d1b7f2e?w=700&q=80&auto=format&fit=crop" alt="Team huddle before practice" loading="lazy"/><span class="cap">Team huddle — photo</span></div>
+      <div class="cell f ph"><img src="https://images.unsplash.com/photo-1650153067935-f5fe6dc369ed?w=700&q=80&auto=format&fit=crop" alt="Tiny class athlete in uniform" loading="lazy"/><span class="cap">Tiny class — photo</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== QUOTES ===================== -->
+<section class="quotes">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <span class="eyebrow">From the Gym Floor</span>
+        <h2>What families<br/>say.</h2>
+      </div>
+      <p>Edit in real quotes from current BCX families before launch.</p>
+    </div>
+    <div class="quote-row reveal">
+      <div class="quote-card">
+        <p>"My daughter looks forward to going to her cheer class every single week — that's the whole thing right there."</p>
+        <cite>— BCX Parent</cite>
+      </div>
+      <div class="quote-card">
+        <p>"The coaches are amazing and love my daughter. I was in gymnastics myself and I can see the difference."</p>
+        <cite>— BCX Parent</cite>
+      </div>
+      <div class="quote-card">
+        <p>"This isn't a playground with mats. It's real training — and my kid rises to meet it every time."</p>
+        <cite>— BCX Parent</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== JOIN / EVAL ===================== -->
+<section class="join" id="join">
+  <svg class="storm-lines" viewBox="0 0 1400 800" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;opacity:.15">
+    <path d="M-50 700 L1450 620" stroke="#ffffff" stroke-width="1.5"/>
+    <path d="M-50 120 L1450 40" stroke="#ffffff" stroke-width="1.5"/>
+  </svg>
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Get Started</span>
+      <h2>Book an<br/>evaluation.</h2>
+      <p class="lead">Tell us about your athlete and we'll follow up with the right program, the next evaluation date, and everything you need to know before day one.</p>
+      <ul class="join-steps">
+        <li><span class="n">01</span> Fill out the form — takes about a minute.</li>
+        <li><span class="n">02</span> We'll call or email to talk through the right fit.</li>
+        <li><span class="n">03</span> Come try a class or attend the next evaluation.</li>
+      </ul>
+    </div>
+    <form class="eval reveal" onsubmit="event.preventDefault(); this.querySelector('.fine').textContent='Thanks — we\'ll be in touch shortly.'; this.reset();">
+      <div class="row">
+        <label>Parent Name<input type="text" required placeholder="Jane Smith"/></label>
+        <label>Athlete Name<input type="text" required placeholder="Alex Smith"/></label>
+      </div>
+      <div class="row">
+        <label>Phone<input type="tel" required placeholder="(205) 555-0142"/></label>
+        <label>Athlete Age<input type="number" min="2" max="19" required placeholder="8"/></label>
+      </div>
+      <label>Email<input type="email" required placeholder="you@email.com"/></label>
+      <label>Program Interested In
+        <select>
+          <option>Tiny &amp; Mini</option>
+          <option>Youth &amp; Junior</option>
+          <option>Senior &amp; Elite</option>
+          <option>Tumbling &amp; Skills</option>
+          <option>Private Coaching</option>
+          <option>Not sure yet</option>
+        </select>
+      </label>
+      <label>Anything we should know?<textarea placeholder="Experience level, schedule questions, etc."></textarea></label>
+      <button type="submit">Submit Evaluation Request</button>
+      <p class="fine">We'll respond within 1–2 business days.</p>
+    </form>
+  </div>
+</section>
+
+<!-- ===================== FAQ ===================== -->
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <span class="eyebrow">Good to Know</span>
+        <h2>Questions,<br/>answered.</h2>
+      </div>
+      <p>Still have one? Reach out — see contact info below.</p>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button aria-expanded="false">Does my child need experience to join? <span class="plus">+</span></button>
+        <div class="faq-panel"><p>No. Tiny &amp; Mini and Youth programs are built for first-timers. Athletes with tumbling or cheer experience can evaluate directly into a level that fits their skill.</p></div>
+      </div>
+      <div class="faq-item">
+        <button aria-expanded="false">What should we wear to an evaluation? <span class="plus">+</span></button>
+        <div class="faq-panel"><p>Fitted athletic wear that allows a coach to see body lines — leggings or fitted shorts and a fitted top. Hair pulled back. No jewelry.</p></div>
+      </div>
+      <div class="faq-item">
+        <button aria-expanded="false">How much does it cost to join a team? <span class="plus">+</span></button>
+        <div class="faq-panel"><p>Costs vary by program and competition schedule. We'll walk you through tuition, uniforms, and competition fees in full before you commit to anything.</p></div>
+      </div>
+      <div class="faq-item">
+        <button aria-expanded="false">Can we try a class before enrolling? <span class="plus">+</span></button>
+        <div class="faq-panel"><p>Yes — reach out through the form above or call the gym directly to set up a trial class.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="site" id="contact">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#top" class="logo">
+          <img src="bcx-logo.png" alt="Bama Cheer Xtreme logo" class="logo-mark"/>
+        </a>
+        <p>Bama Cheer Xtreme is an All-Star cheer gym serving Northport, Tuscaloosa, and the greater West Alabama area — built around technique, discipline, and confidence that lasts long after the mat.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Visit</h4>
+        <p>3618 University Blvd E<br/>Suite 140<br/>Tuscaloosa, AL 35404</p>
+        <a href="https://maps.google.com/?q=3618+University+Blvd+E+Suite+140+Tuscaloosa+AL+35404" target="_blank" rel="noopener">Get Directions →</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="mailto:anquettashealey@yahoo.com">anquettashealey@yahoo.com</a>
+        <a href="tel:+12055550142">(205) 555-0142</a>
+        <p style="opacity:.5; font-size:12.5px;">Phone number placeholder — confirm current line</p>
+      </div>
+      <div class="footer-col">
+        <h4>Follow Thunder</h4>
+        <a href="https://www.instagram.com/bcx_thunder/" target="_blank" rel="noopener">Instagram — @bcx_thunder</a>
+        <a href="https://www.facebook.com/p/Bama-Cheer-Xtreme-100064020464019/" target="_blank" rel="noopener">Facebook</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Bama Cheer Xtreme. All rights reserved.</span>
+      <span>Northport / Tuscaloosa, Alabama</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // header solid on scroll
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('solid', window.scrollY > 40);
+  }, { passive:true });
+
+  // mobile menu
+  const navToggle = document.getElementById('navToggle');
+  const navClose = document.getElementById('navClose');
+  const mobileMenu = document.getElementById('mobileMenu');
+  navToggle.addEventListener('click', () => { mobileMenu.classList.add('open'); navToggle.setAttribute('aria-expanded','true'); });
+  navClose.addEventListener('click', () => { mobileMenu.classList.remove('open'); navToggle.setAttribute('aria-expanded','false'); });
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+
+  // scroll reveal
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold:0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // faq accordion
+  document.querySelectorAll('.faq-item button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      const panel = btn.nextElementSibling;
+      document.querySelectorAll('.faq-item button').forEach(b => {
+        b.setAttribute('aria-expanded','false');
+        b.nextElementSibling.style.maxHeight = null;
+      });
+      if (!expanded) {
+        btn.setAttribute('aria-expanded','true');
+        panel.style.maxHeight = panel.scrollHeight + 'px';
+      }
+    });
+  });
+</script>
+</body>
+</html>
